@@ -35,12 +35,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Kinect, Version=1.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.Kinect.Toolkit">
-      <HintPath>C:\Users\Tomasz\Documents\InteractionGallery-WPF\bin\Debug\Microsoft.Kinect.Toolkit.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Kinect.Toolkit.Controls">
-      <HintPath>C:\Users\Tomasz\Documents\InteractionGallery-WPF\bin\Debug\Microsoft.Kinect.Toolkit.Controls.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
@@ -64,11 +58,16 @@
     <Compile Include="Controls\NavigationBanner.xaml.cs">
       <DependentUpon>NavigationBanner.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\PromptControl.cs" />
+    <Compile Include="Controls\TransitioningContentControl.cs" />
+    <Compile Include="Models\ExperienceOptionModel.cs" />
     <Compile Include="Navigation\DefaultNavigableContexts.cs" />
     <Compile Include="Navigation\ExportNavigableAttribute.cs" />
     <Compile Include="Navigation\IExportNavigableMetadata.cs" />
     <Compile Include="Navigation\INavigableContext.cs" />
     <Compile Include="Navigation\NavigationManager.cs" />
+    <Compile Include="Utilities\CommandOnEventAssociation.cs" />
+    <Compile Include="Utilities\CommandOnEventHelper.cs" />
     <Compile Include="Utilities\EngagementStateManager.cs" />
     <Compile Include="Utilities\EventQueueSection.cs" />
     <Compile Include="Utilities\MouseMovementDetector.cs" />
@@ -87,7 +86,23 @@
     <Compile Include="View\HomeScreenView.xaml.cs">
       <DependentUpon>HomeScreenView.xaml</DependentUpon>
     </Compile>
+    <Page Include="Common\StandardStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\KinectButtonStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\NavigationBanner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PromptControlStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TransitioningContentControlStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -154,7 +169,14 @@
     <Resource Include="Content\AttractScreen\two.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\HomeScreen\" />
+    <ProjectReference Include="C:\Users\Tomasz\Documents\Microsoft.Kinect.Toolkit.Controls\Microsoft.Kinect.Toolkit.Controls.csproj">
+      <Project>{4508c4d1-85bb-4f3f-9e3b-cc93d231c65d}</Project>
+      <Name>Microsoft.Kinect.Toolkit.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tomasz\Documents\Microsoft.Kinect.Toolkit\Microsoft.Kinect.Toolkit.csproj">
+      <Project>{c6f9c31b-6130-4443-a5cc-ef0664552ecd}</Project>
+      <Name>Microsoft.Kinect.Toolkit</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -19,6 +19,10 @@
                     <SolidColorBrush x:Key="KinectPurpleBrush" Color="#FF511C74"/>
                 </ResourceDictionary>
                 <ResourceDictionary Source="ViewDataTemplate.xaml" />
+                <ResourceDictionary Source="Common/StandardStyles.xaml"/>
+                <ResourceDictionary Source="Controls/KinectButtonStyles.xaml" />
+                <ResourceDictionary Source="Controls/PromptControlStyles.xaml" />
+                <ResourceDictionary Source="Controls/TransitioningContentControlStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

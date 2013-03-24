@@ -42,7 +42,7 @@
             controller.EngagedUserMessageBrush = (Brush)this.Resources["EngagedUserMessageBrush"];
             controller.TrackedUserMessageBrush = (Brush)this.Resources["TrackedUserMessageBrush"];
 
-            //this.kinectRegion.HandPointersUpdated += (sender, args) => controller.OnHandPointersUpdated(this.kinectRegion.HandPointers);
+            this.kinectRegion.HandPointersUpdated += (sender, args) => controller.OnHandPointersUpdated(this.kinectRegion.HandPointers);
 
             this.DataContext = controller;
 

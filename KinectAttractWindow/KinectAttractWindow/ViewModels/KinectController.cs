@@ -1077,7 +1077,7 @@
                 if (this.IsUserEngaged)
                 {
                     // If there was no engaged user and now there is, initiate a navigation to the home screen.
-                    this.NavigationManager.NavigateToHome(DefaultNavigableContexts.HomeScreen);
+                    //this.NavigationManager.NavigateToHome(DefaultNavigableContexts.HomeScreen);
                 }
                 else
                 {
