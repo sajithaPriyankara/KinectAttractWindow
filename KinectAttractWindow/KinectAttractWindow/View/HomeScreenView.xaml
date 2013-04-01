@@ -4,12 +4,19 @@
       xmlns:k="http://schemas.microsoft.com/kinect/2013"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:c="clr-namespace:KinectAttractWindow.Controls"
+      xmlns:m="clr-namespace:KinectAttractWindow.Models"
+      xmlns:u="clr-namespace:KinectAttractWindow.Utilities"
       HorizontalAlignment="Stretch"
       VerticalAlignment="Stretch"
-      Background="{StaticResource BackgroundGradientBrush}">
+      Background="{StaticResource BackgroundGradientBrush}"
+      u:VisualStateHelper.VisualStateProperty="{Binding VisualStateName}">
 
     <Grid>
         <ContentPresenter Content="{Binding NavigationManager}" />
+        
+        <Image VerticalAlignment="Top" HorizontalAlignment="Center"
+               MinWidth="640" MinHeight="480" Source="{Binding RGBImage}" />
         
     </Grid>
 </UserControl>
