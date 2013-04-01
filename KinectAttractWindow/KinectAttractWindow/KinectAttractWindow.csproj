@@ -78,6 +78,7 @@
     <Compile Include="Utilities\VisualStateHelper.cs" />
     <Compile Include="Utilities\WindowBezelHelper.cs" />
     <Compile Include="ViewModels\AttractScreenViewModel.cs" />
+    <Compile Include="ViewModels\HomeScreenViewModel.cs" />
     <Compile Include="ViewModels\KinectController.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="View\AttractScreenView.xaml.cs">
@@ -177,6 +178,9 @@
       <Project>{c6f9c31b-6130-4443-a5cc-ef0664552ecd}</Project>
       <Name>Microsoft.Kinect.Toolkit</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\HomeScreen\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

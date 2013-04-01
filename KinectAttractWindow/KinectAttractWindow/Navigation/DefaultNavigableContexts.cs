@@ -6,5 +6,6 @@
     public static class DefaultNavigableContexts
     {
         public const string AttractScreen = "Attract";
+        public const string HomeScreen = "Home";
     }
 }

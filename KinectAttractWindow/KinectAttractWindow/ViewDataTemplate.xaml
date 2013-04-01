@@ -13,5 +13,9 @@
     <DataTemplate DataType="{x:Type vm:AttractScreenViewModel}">
         <v:AttractScreenView />
     </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type vm:HomeScreenViewModel}">
+        <v:HomeScreenView />
+    </DataTemplate>
 
 </ResourceDictionary>
