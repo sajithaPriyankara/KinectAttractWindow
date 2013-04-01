@@ -60,7 +60,6 @@
     </Compile>
     <Compile Include="Controls\PromptControl.cs" />
     <Compile Include="Controls\TransitioningContentControl.cs" />
-    <Compile Include="Models\ExperienceOptionModel.cs" />
     <Compile Include="Navigation\DefaultNavigableContexts.cs" />
     <Compile Include="Navigation\ExportNavigableAttribute.cs" />
     <Compile Include="Navigation\IExportNavigableMetadata.cs" />
