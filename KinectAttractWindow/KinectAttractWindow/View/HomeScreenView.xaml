@@ -8,7 +8,7 @@
         <ContentPresenter Content="{Binding NavigationManager}" />
 
         <Image VerticalAlignment="Top" HorizontalAlignment="Center"
-               MinWidth="640" MinHeight="480" Source="{Binding RGBImage}" >
+               MinWidth="640" MinHeight="480" Source="{Binding RGBImage.DisplayImage.Source}" >
             <Image.DataContext>
                 <ViewModels:HomeScreenViewModel/>
             </Image.DataContext>
