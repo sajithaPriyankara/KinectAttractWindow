@@ -9,5 +9,10 @@
     public class HomeModel
     {
         public Image DisplayImage { get; set; }
+        
+        public HomeModel()
+        {
+            DisplayImage = new Image();        
+        }
     }
 }
