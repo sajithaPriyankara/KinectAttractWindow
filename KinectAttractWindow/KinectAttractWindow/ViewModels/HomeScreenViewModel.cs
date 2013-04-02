@@ -11,7 +11,24 @@
     [ExportNavigable(NavigableContextName = DefaultNavigableContexts.HomeScreen)]
     public class HomeScreenViewModel : ViewModelBase
     {
-        public HomeModel RGBImage = new HomeModel();
+        //public HomeModel RGBImage = new HomeModel();
+        
+        public const string RGBImagePropertyName = "RGBImage";
+        private HomeModel _rgbImage = new HomeModel();
+        public HomeModel RGBImage
+        {
+            get { return _rgbImage; }
+
+            set
+            {
+                if (_rgbImage == value) { return; }
+
+                var oldValue = _rgbImage;
+                _rgbImage = value;
+            }
+        }
+        
+        
         WriteableBitmap wBitmap;
         private KinectSensor Sensor;
 
