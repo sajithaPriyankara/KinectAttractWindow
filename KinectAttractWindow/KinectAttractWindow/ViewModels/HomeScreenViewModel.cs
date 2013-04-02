@@ -6,11 +6,13 @@
     using System.Windows.Controls;
     using System.Windows.Media.Imaging;
     using System.Windows.Media;
+    using System.Windows;
 
     [ExportNavigable(NavigableContextName = DefaultNavigableContexts.HomeScreen)]
     public class HomeScreenViewModel : ViewModelBase
     {
         public HomeModel RGBImage = new HomeModel();
+        WriteableBitmap wBitmap;
         private KinectSensor Sensor;
 
         public HomeScreenViewModel()
@@ -44,17 +46,38 @@
                 byte[] pixels = new byte[colorFrame.PixelDataLength];
                 colorFrame.CopyPixelDataTo(pixels);
 
-                int stride = colorFrame.Width * 4;
+                wBitmap = new WriteableBitmap(colorFrame.Width,
+                                                  colorFrame.Height,
+                    // Standard DPI
+                                                  96, 96,
+                    // Current format for the ColorImageFormat
+                                                  PixelFormats.Bgr32,
+                    // BitmapPalette
+                                                  null);
 
-                this.RGBImage.DisplayImage.Source =
-                    BitmapSource.Create(colorFrame.Width,
-                    colorFrame.Height,
-                    96,
-                    96,
-                    PixelFormats.Bgr32,
-                    null,
-                    pixels,
-                    stride);
+                wBitmap.WritePixels(
+                    // Represents the size of our image
+                new Int32Rect(0, 0, colorFrame.Width, colorFrame.Height),
+                    // Our image data
+                pixels,
+                    // How much bytes are there in a single row?
+                colorFrame.Width * colorFrame.BytesPerPixel,
+                    // Offset for the buffer, where does he need to start
+                0);
+
+
+                this.RGBImage.DisplayImage.Source = wBitmap;
+                //int stride = colorFrame.Width * 4;
+
+                //this.RGBImage.DisplayImage.Source =
+                //    BitmapSource.Create(colorFrame.Width,
+                //    colorFrame.Height,
+                //    96,
+                //    96,
+                //    PixelFormats.Bgr32,
+                //    null,
+                //    pixels,
+                //    stride);
             }
         }
     }
