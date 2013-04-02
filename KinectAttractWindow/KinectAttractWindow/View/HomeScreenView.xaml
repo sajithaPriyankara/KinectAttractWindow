@@ -1,12 +1,4 @@
-﻿<UserControl x:Class="KinectAttractWindow.View.HomeScreenView"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:k="http://schemas.microsoft.com/kinect/2013"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      xmlns:c="clr-namespace:KinectAttractWindow.Controls"
-      xmlns:m="clr-namespace:KinectAttractWindow.Models"
-      xmlns:u="clr-namespace:KinectAttractWindow.Utilities"
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:k="http://schemas.microsoft.com/kinect/2013" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:c="clr-namespace:KinectAttractWindow.Controls" xmlns:m="clr-namespace:KinectAttractWindow.Models" xmlns:u="clr-namespace:KinectAttractWindow.Utilities" xmlns:ViewModels="clr-namespace:KinectAttractWindow.ViewModels" x:Class="KinectAttractWindow.View.HomeScreenView"
       HorizontalAlignment="Stretch"
       VerticalAlignment="Stretch"
       Background="{StaticResource BackgroundGradientBrush}"
@@ -14,9 +6,13 @@
 
     <Grid>
         <ContentPresenter Content="{Binding NavigationManager}" />
-        
+
         <Image VerticalAlignment="Top" HorizontalAlignment="Center"
-               MinWidth="640" MinHeight="480" Source="{Binding RGBImage}" />
-        
+               MinWidth="640" MinHeight="480" Source="{Binding RGBImage}" >
+            <Image.DataContext>
+                <ViewModels:HomeScreenViewModel/>
+            </Image.DataContext>
+        </Image>
+
     </Grid>
 </UserControl>

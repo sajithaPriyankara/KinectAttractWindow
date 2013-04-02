@@ -20,7 +20,6 @@
         {
             if (KinectSensor.KinectSensors.Count > 0)
             {
-
                 this.Sensor = KinectSensor.KinectSensors[0];
 
                 if (this.Sensor.Status == KinectStatus.Connected)
